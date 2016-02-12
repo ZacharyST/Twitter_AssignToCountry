@@ -14,7 +14,7 @@ files <- list.files(path=<insert path here>, full.names=TRUE)  # Modify this lin
 ### Modify below to filter files by date and size
 times <- file.info(files)
 times <- times[times$mtime < '2014-12-31',]  # NB: Change this date as necessary.
-times <- times[times$size > 100,]  # There are some blank files.  Execution will throw an error and stop on these files, so get rid of them.
+times <- times[times$size > 100,]  # There may be blank files.  Execution will throw an error and stop on these files, so get rid of them.
 files <- rownames(times)  # These are the new files to process.
 
 ### Function that reads the data, adds ISO 3166-1-alpha-2 code
